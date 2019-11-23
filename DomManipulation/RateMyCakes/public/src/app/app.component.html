@@ -1,0 +1,36 @@
+<head>
+</head>
+<body>
+
+  <div>
+
+    <h1>Rate my Cakes!</h1>
+
+      <p>Baker Name:</p>
+      <input type="text" name="baker" [(ngModel)]="newCake.baker" placeholder="Jane Doe"><br>
+      <p>URL:</p>
+      <input type="text" name="img" [(ngModel)]="newCake.img" placeholder="google.com"><br>
+      <br>
+      <button (click)=createCake()>Submit Cake</button><br>
+      <br>
+
+  </div>
+
+  <div>
+
+    <div *ngFor="let cake of cakes">
+
+      <img src="{{cake.img}}" (click)="displayCake(cake)" style="height: 100px; width: 100px">
+      <app-cake [oneCake]="cake"></app-cake>
+
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div>
+    <app-show *ngIf="showCake" [oneCake]="showCake"></app-show>
+  </div>
+  
+</body>

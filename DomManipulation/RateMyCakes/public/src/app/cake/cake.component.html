@@ -1,0 +1,11 @@
+<form>
+    <select name="rating" [(ngModel)]="newReview.rating">
+        <option [ngValue]="1">1</option>
+        <option [ngValue]="2">2</option>
+        <option [ngValue]="3">3</option>
+        <option [ngValue]="4">4</option>
+        <option [ngValue]="5">5</option>
+    </select>
+    <textarea name="desc" [(ngModel)]="newReview.desc"></textarea>
+    <button (click)="createReview()">Rate!</button>
+</form>
